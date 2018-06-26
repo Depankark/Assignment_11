@@ -1,0 +1,56 @@
+1)Ans:-
+
+from threading import *
+import time
+def message():
+    time.sleep(5)
+    print("This is the message.. Sleeping for 5Sec....")
+
+t=Thread(target=message)
+t.start()
+
+
+2)Ans:-
+
+from threading import *
+import time
+def num():
+    for i in range(1,22):
+        print(i)
+        time.sleep(1)
+
+t=Thread(target=num)
+t.start()
+
+3)Ans:-
+
+from threading import *
+import time
+def list():
+    list=[1,2,3,4]
+    for i in range(len(list)):
+        print(list[i])
+        x=2*list[i]
+        time.sleep(x)
+
+t=Thread(target=list)
+t.start()
+
+
+4)Ans:-
+
+from threading import *
+def factorial(num):
+    '''Recursive Function to find Factorial'''
+    if num == 1:
+         return 1
+    else:
+         return (num * factorial(num-1))
+    return 1 if num == 1 else (num * factorial(num-1))
+
+
+num = int(input("Enter Number to be factorial:"))
+print('Factorial of {} is {}'.format(num, factorial(num)))
+
+t=Thread(target=factorial,args=(num,))
+t.start()
